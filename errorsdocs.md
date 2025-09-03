@@ -10,7 +10,7 @@ This document provides a detailed analysis of the errors encountered while setti
 ```
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. 
 This behaviour is the source of the following dependency conflicts.
-chatterbot 1.0.4 requires sqlalchemy<1.3,>=1.2, but you have sqlalchemy 1.3.24
+chatterbot 1.0.4 requires sqlalchemy<1.3,>=1.2, but I have sqlalchemy 1.3.24
 ```
 
 **Cause:**  
@@ -81,6 +81,27 @@ The **ChatterBot project runs successfully** without errors 🎉
 
 ---
 
-## Notes
-- These errors are common when using **ChatterBot** with newer versions of Python and libraries.  
-- Future developers should maintain a `requirements.txt` file to lock dependency versions for stability.  
+## Additional Info 
+
+
+## 4. What Does `nltk.download('punkt_tab')` Do?
+
+**Code:**
+```python
+import nltk
+nltk.download('punkt_tab')
+```
+
+**Explanation:**  
+- `import nltk` loads the **Natural Language Toolkit** library.  
+- `nltk.download('punkt_tab')` downloads a specific resource called **punkt_tab**.  
+
+**What is `punkt_tab`?**  
+- It contains **language-specific rules and tables** used by NLTK’s tokenizer.  
+- Helps split text into **sentences and words** correctly (e.g., recognizing abbreviations like "Dr." vs. sentence endings).  
+- NLTK previously only had `punkt`, but now it requires both `punkt` and `punkt_tab`.  
+
+**Why it was needed:**  
+Without `punkt_tab`, ChatterBot’s tokenizer could not function, resulting in a `LookupError`.  
+
+---

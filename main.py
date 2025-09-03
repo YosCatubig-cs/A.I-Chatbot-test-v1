@@ -1,9 +1,10 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-# Update
+# Import line ⚠️
 import nltk
 nltk.download('punkt_tab')
+###
 
 # Create a new chat bot named Charlie
 chatbot = ChatBot('Charlie')
