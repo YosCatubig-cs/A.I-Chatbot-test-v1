@@ -1,0 +1,10 @@
+# Ignore virtual environment
+chatbottestv1_env/
+
+# Ignore SQLite database files
+*.sqlite3
+
+# (Optional) Ignore Python cache files
+__pycache__/
+*.pyc
+
