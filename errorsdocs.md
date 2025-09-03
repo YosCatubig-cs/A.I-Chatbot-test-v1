@@ -83,7 +83,6 @@ The **ChatterBot project runs successfully** without errors 🎉
 
 ## Additional Info 
 
-
 ## 4. What Does `nltk.download('punkt_tab')` Do?
 
 **Code:**
